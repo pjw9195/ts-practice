@@ -12,6 +12,7 @@ document.body.append(form);
 const input = document.createElement('input');
 input.type = 'number';
 form.append(input);
+//test
 
 const button = document.createElement('button')
 button.textContent = '입력';
