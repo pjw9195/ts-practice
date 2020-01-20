@@ -1,33 +1,12 @@
-var numberOne = Math.ceil(Math.random() * 9);
-var numberTwo = Math.ceil(Math.random() * 9);
-var result = numberOne * numberTwo;
-var wordNumber = document.createElement('div');
-wordNumber.textContent = numberOne + " \uACF1\uD558\uAE30 " + numberTwo;
-document.body.append(wordNumber);
-var form = document.createElement('form');
-document.body.append(form);
-var input = document.createElement('input');
-input.type = 'number';
-form.append(input);
-var button = document.createElement('button');
-button.textContent = '입력';
-form.append(button);
-var resultDiv = document.createElement('div');
-document.body.append(resultDiv);
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (result === parseInt(input.value)) {
-        resultDiv.textContent = '딩동댕';
-        numberOne = Math.ceil(Math.random() * 9);
-        numberTwo = Math.ceil(Math.random() * 9);
-        result = numberOne * numberTwo;
-        wordNumber.textContent = numberOne + " \uACF1\uD558\uAE30 " + numberTwo + "\uB294?";
-        input.value = '';
-        input.focus();
-    }
-    else {
-        resultDiv.textContent = '땡';
-        input.value = '';
-        input.focus();
-    }
-});
+var num;
+num = 3;
+var str = 'hello';
+var arr = [true, 3, 'hello'];
+var obj = { a: 'b' };
+var Color;
+(function (Color) {
+    Color[Color["red"] = 0] = "red";
+    Color[Color["green"] = 1] = "green";
+    Color[Color["blue"] = 2] = "blue";
+})(Color || (Color = {}));
+var c = Color.green;

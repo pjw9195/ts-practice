@@ -1,39 +1,39 @@
-let numberOne = Math.ceil(Math.random()*9);
-let numberTwo = Math.ceil(Math.random()*9);
-let result = numberOne * numberTwo;
+//기본 타입들
+let num : number;
+num = 3;
+let str : string = 'hello';
+let arr: (string | 3 | boolean)[] = [true, 3 ,'hello'];
 
-const wordNumber = document.createElement('div');
-wordNumber.textContent = `${numberOne} 곱하기 ${numberTwo}`;
-document.body.append(wordNumber);
+const obj: {a:string, b?:number} = {a:'b'};
 
-const form = document.createElement('form');
-document.body.append(form);
+//enum의 활용
+enum Color {red,green,blue}
+let c: Color =Color.green;
+Color[0] === 'Red';
+Color['red'] === 0;
 
-const input = document.createElement('input');
-input.type = 'number';
-form.append(input);
-//test
+function add(a:number, b:number): void { //리턴값이 없는 함수
+    console.log(a+b)
+}
 
-const button = document.createElement('button')
-button.textContent = '입력';
-form.append(button);
-
-const resultDiv = document.createElement('div');
-document.body.append(resultDiv);
-
-form.addEventListener('submit',(e) => {
-    e.preventDefault();
-    if(result === parseInt(input.value)){
-        resultDiv.textContent = '딩동댕';
-        numberOne = Math.ceil(Math.random()*9);
-        numberTwo = Math.ceil(Math.random()*9);
-        result = numberOne * numberTwo;
-        wordNumber.textContent = `${numberOne} 곱하기 ${numberTwo}는?`;
-        input.value = '';
-        input.focus();
-    }else{
-        resultDiv.textContent = '땡';
-        input.value = '';
-        input.focus();
+function add2(a:number, b:number): (c: string) => number {
+    return (c: string) => {
+        return 3;
     }
-})
+}
+
+const obj2: {a:(b?:number) => string} = {
+    a(b?:number){
+        return 'hi'
+    }
+}
+
+//d.ts
+const hello: number;
+
+(hello as unknown as string).substr(1,2)
+
+(<string><unknown>hello).substr(1,2)
+
+const div = document.createElement('div');
+const a = div as HTMLElement
